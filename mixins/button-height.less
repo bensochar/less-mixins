@@ -1,7 +1,7 @@
-// Backgrounds
-// --------------------------------------------------
-// Usage:
-// #translucent > .background(#ffffff; 0.8);
+/*
+Button Heights:
+For when you want to mico-manage button sizes
+-------------------------------------------------- */
 .button-height(@font-size; @height; @border-width:0) when (( (@font-size + 2) + (@border-width * 2) ) <= @height) {
   @line-height: @font-size + 2;
   font-size: @font-size;

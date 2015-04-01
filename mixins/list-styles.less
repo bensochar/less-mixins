@@ -1,0 +1,80 @@
+// List Styles
+// --------------------------------------------------
+.list-lower-alpha{
+  list-style-type: lower-alpha;
+}
+.list-upper-alpha{
+  list-style-type: upper-alpha;
+}
+.list-disc {
+  list-style-type: disc;
+}
+.list-decimal {
+  list-style-type: decimal;
+}
+.list-circle {
+  list-style-type: circle;
+}
+.list-lower-roman {
+  list-style-type: lower-roman;
+}
+.list-upper-roman {
+  list-style-type: upper-roman;
+}
+.list-parenthesis {
+  list-style-type: none;
+  counter-reset: list;
+  > li {
+    list-style-type: none;
+  }
+  > li:before {
+    counter-increment: list;
+    content:"(" counter(list, decimal) ") ";
+  }
+}
+
+// List Positions
+// --------------------------------------------------
+.list-outside {
+  list-style-position: outside;
+  padding-left: 0;
+}
+.list-inside {
+  list-style-position: inside;
+  padding-left: 0;
+}
+
+// MLA Styles
+// --------------------------------------------------
+// II. PREPARE APPLICATION
+//   A. Write personal statement
+//     1. Choose interesting topic
+//       a. Describe an influential person in your life
+//         (1) Favorite high school teacher
+.list-mla{
+  list-style-type: upper-roman;
+  li > ol,
+  li > ul {
+    list-style-type: upper-alpha;
+  }
+  li li > ol,
+  li li > ul {
+    list-style-type: decimal;
+  }
+  li li li > ol,
+  li li li > ul {
+    list-style-type: lower-alpha;
+  }
+  li li li li > ol,
+  li li li li > ul {
+    list-style-type: none;
+    counter-reset: list;
+    > li {
+      list-style-type: none;
+    }
+    > li:before {
+      counter-increment: list;
+      content:"(" counter(list, decimal) ") ";
+    }
+  }
+}
