@@ -1,0 +1,22 @@
+// Translucent
+// --------------------------------------------------
+// Add an alphatransparency value to any background or border color (via Elyse Holladay)
+// Usage:
+// #translucent > .background(#ffffff; 0.8);
+#translucent {
+  .background(@color: #ffffff; @alpha: 1;) {
+    background-color: hsla(hue(@color), saturation(@color), lightness(@color), @alpha);
+    @alphaColour: hsla(hue(@color), saturation(@color), lightness(@color), @alpha);
+    @ieAlphaColour: argb(@alphaColour);
+    .lt-ie9 & {
+      -ms-filter:  "progid:DXImageTransform.Microsoft.gradient(startColorstr=@{ieAlphaColour}, endColorstr=@{ieAlphaColour})"; // IE 8+
+    }
+    .lt-ie8 & {
+      filter: e(%("progid:DXImageTransform.Microsoft.gradient(startColorstr='%d', endColorstr='%d', GradientType=0)",argb(@alphaColour),argb(@alphaColour))); // IE9 and down
+    }
+  }
+  .border(@color: @white; @alpha: 1;) {
+    border-color: hsla(hue(@color), saturation(@color), lightness(@color), @alpha);
+    .background-clip(padding-box);
+  }
+}

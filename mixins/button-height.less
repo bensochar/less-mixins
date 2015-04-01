@@ -1,0 +1,20 @@
+// Backgrounds
+// --------------------------------------------------
+// Usage:
+// #translucent > .background(#ffffff; 0.8);
+.button-height(@font-size; @height; @border-width:0) when (( (@font-size + 2) + (@border-width * 2) ) <= @height) {
+  @line-height: @font-size + 2;
+  font-size: @font-size;
+  line-height: @line-height;
+  padding-top:ceil((@height - @line-height) / 2) - @border-width;
+  padding-bottom:floor((@height - @line-height) / 2) - @border-width;
+  border-width: @border-width;
+}
+
+.button-height(@font-size; @height; @border-width:0) when (( (@font-size + 2) + (@border-width * 2) ) > @height) {
+  font-size: @font-size;
+  line-height: @height - (@border-width * 2);
+  padding-top:0;
+  padding-bottom:0;
+  border-width: @border-width;
+}

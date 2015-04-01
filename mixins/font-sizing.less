@@ -1,0 +1,30 @@
+// Font Sizing Shorthand
+// --------------------------------------------------
+// Usage:
+// #font > .size-margin(10px; 20px; 0; 10px);
+#font {
+  .size(@font-size; @line-height:inherit) {
+    font-size: @font-size;
+    line-height: @line-height;
+  }
+  .size-margin(@font-size; @line-height:inherit; @margin-top:inherit; @margin-bottom:inherit) {
+    font-size: @font-size;
+    line-height: @line-height;
+    margin-top: @margin-top;
+    margin-bottom: @margin-bottom;
+  }
+  .size-padding(@font-size; @line-height:inherit; @padding-top:inherit; @padding-bottom:inherit) {
+    font-size: @font-size;
+    line-height: @line-height;
+    padding-top: @padding-top;
+    padding-bottom: @padding-bottom;
+  }
+  .clear-margins() {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+  .clear-padding() {
+    padding-top:0;
+    padding-bottom:0;
+  }
+}
