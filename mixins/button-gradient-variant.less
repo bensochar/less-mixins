@@ -1,0 +1,44 @@
+/*
+Button Heights:
+For when you want to mico-manage button sizes
+-------------------------------------------------- */
+.button-gradient-variant(@color; @start; @stop; @border) {
+  color: @color;
+  border-color: @border;
+  #gradient > .vertical-button(@start; @stop; @start-offset: 33%; @end-offset: 100% );
+  &:hover,
+  &:focus,
+  &.focus,
+  &:active,
+  &.active,
+  .open > .dropdown-toggle& {
+    color: @color;
+    border-color: @border;
+    #gradient > .vertical-button(lighten(@start, 8%); lighten(@stop, 4%); @start-offset: 33%; @end-offset: 100% );
+  }
+  &:active,
+  &.active,
+  .open > .dropdown-toggle& {
+    background-image: none;
+    #gradient > .vertical-button(@stop; @start; @start-offset: 33%; @end-offset: 100% );
+  }
+  &.disabled,
+  &[disabled],
+  fieldset[disabled] & {
+    &,
+    &:hover,
+    &:focus,
+    &.focus,
+    &:active,
+    &.active {
+        #gradient > .vertical-button(desaturate(@start, 8%); desaturate(@stop, 8%); @start-offset: 33%; @end-offset: 100% );
+        border-color: @border;
+    }
+  }
+
+  .badge {
+    color: @stop;
+    background-color: @color;
+  }
+}
+

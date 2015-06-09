@@ -13,11 +13,53 @@
     margin-top: @margin-top;
     margin-bottom: @margin-bottom;
   }
+  .size-margin(@font-size; @line-height:inherit; @margin-top:inherit; @margin-bottom:inherit; @border-top:0; @border-bottom:0) when (@border-top > 0){
+    font-size: @font-size;
+    line-height: @line-height;
+    margin-top: @margin-top;
+    margin-bottom: @margin-bottom;
+    border-top-width: @border-top;
+    border-top-style: solid;
+    border-bottom-width: @border-bottom;
+  }
+  .size-margin(@font-size; @line-height:inherit; @margin-top:inherit; @margin-bottom:inherit; @border-top:0; @border-bottom:0) when (@border-bottom > 0){
+    font-size: @font-size;
+    line-height: @line-height;
+    margin-top: @margin-top;
+    margin-bottom: @margin-bottom;
+    border-top-width: @border-top;
+    border-bottom-width: @border-bottom;
+    border-bottom-style: solid;
+  }
+  .size-margin-border(@font-size; @line-height:inherit; @margin-top:inherit; @margin-bottom:inherit; @border-top:0; @border-top:0) {
+    font-size: @font-size;
+    line-height: @line-height;
+    margin-top: @margin-top;
+    margin-bottom: @margin-bottom;
+  }
   .size-padding(@font-size; @line-height:inherit; @padding-top:inherit; @padding-bottom:inherit) {
     font-size: @font-size;
     line-height: @line-height;
     padding-top: @padding-top;
     padding-bottom: @padding-bottom;
+  }
+  .size-padding(@font-size; @line-height:inherit; @padding-top:inherit; @padding-bottom:inherit; @border-top:0; @border-bottom:0) when (@border-top > 0){
+    font-size: @font-size;
+    line-height: @line-height;
+    padding-top: @padding-top;
+    padding-bottom: @padding-bottom;
+    border-top-width: @border-top;
+    border-top-style: solid;
+    border-bottom-width: @border-bottom;
+  }
+  .size-padding(@font-size; @line-height:inherit; @padding-top:inherit; @padding-bottom:inherit; @border-top:0; @border-bottom:0) when (@border-bottom > 0){
+    font-size: @font-size;
+    line-height: @line-height;
+    padding-top: @padding-top;
+    padding-bottom: @padding-bottom;
+    border-top-width: @border-top;
+    border-bottom-width: @border-bottom;
+    border-bottom-style: solid;
   }
   .clear-margins() {
     margin-top: 0;
